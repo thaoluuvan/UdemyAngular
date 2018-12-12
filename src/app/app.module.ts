@@ -4,8 +4,10 @@ import { FormsModule } from '@angular/forms' ;
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {MatFormFieldModule, MatButtonModule, MatCardModule, MatInputModule} from '@angular/material';
 import { PostCreateComponent } from './post-create/post-create.component';
 import { from } from 'rxjs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,12 @@ import { from } from 'rxjs';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatCardModule,
+    BrowserAnimationsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

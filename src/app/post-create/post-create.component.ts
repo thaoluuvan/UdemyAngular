@@ -16,6 +16,7 @@ export class PostCreateComponent implements OnInit {
   }
 
   onAddPost() {
+    console.log('onAddPost');
   this.newPost = this.enterValue ;
   }
 
