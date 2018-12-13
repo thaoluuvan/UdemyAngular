@@ -11,7 +11,5 @@ import { importType } from '@angular/compiler/src/output/output_ast';
 export class AppComponent {
   title = 'UdemyAngular';
   posts: Post[] = [];
-  onAddPost(post) {
-    this.posts.push(post);
-  }
+
 }
