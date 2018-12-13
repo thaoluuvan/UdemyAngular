@@ -1,10 +1,35 @@
 const express = require('express');
 const app =  express();
-app.use((req, res, next)=>{
+app.use('api/posts',(req, res, next)=>{
  console.log('First middlerware');
- //next();
+ next();
 });
 app.use((req, res, next)=>{
-  res.send('Hello from Express');
+  const posts = [
+    {
+      id: 'ddiddidi',
+      title: 'this is title',
+      content: 'this is content'
+    },
+    {
+      id: 'ddiddidi',
+      title: 'this is title',
+      content: 'this is content'
+    },
+    {
+      id: 'ddiddidi',
+      title: 'this is title',
+      content: 'this is content'
+    },
+    {
+      id: 'ddiddidi',
+      title: 'this is title',
+      content: 'this is content'
+    }
+  ]
+  res.status(200).json({
+     message: 'Fetched successfully',
+     post: posts
+  });
  });
  module.exports = app;
