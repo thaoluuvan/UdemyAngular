@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use((req,res, next)=>{
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Header",
+  res.setHeader("Access-Control-Allow-Headers",
    "Origin,X-Request-With, Content-Type, Accept");
    res.setHeader("Access-Control-Allow-Methods","GET,POST,PATCH,DELETE,OPTIONS")
    next();
@@ -16,11 +16,12 @@ app.post('/api/posts',(req, res) => {
   const post = req.body;
   res.status(201);
   console.log(post);
-  res.send.json({
+  res.json({
    message: 'Post added successfully!'
   });
 });
-app.use('/api/posts',(req,res, next) => {
+
+app.get('/api/posts',(req,res, next) => {
   const posts = [
   {id: 'dddffaf', title: 'this is title', content: 'this is content'},
   {id: 'dddffaf', title: 'this is title', content: 'this is content'},
