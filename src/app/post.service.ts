@@ -9,6 +9,7 @@ export class PostsService {
   private postUpdated = new Subject<Post[]>();
 
   constructor(private http: HttpClient) {
+
   }
 
   getPosts() {
