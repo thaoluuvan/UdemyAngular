@@ -10,11 +10,12 @@ mongoose.connect("mongodb+srv://morejump:PZx8TAAD7pQZykuU@cluster0-eufyy.mongodb
 .catch(()=>{
   console.log('Connect to database failed');
 });
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-
 //PZx8TAAD7pQZykuU
 
+// middleware
 app.use((req,res, next)=>{
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Headers",
@@ -22,6 +23,7 @@ app.use((req,res, next)=>{
    res.setHeader("Access-Control-Allow-Methods","GET,POST,PATCH,DELETE,OPTIONS")
    next();
 });
+// post
 app.post('/api/posts',(req, res) => {
   const post = new Post({
     title: req.body.title,
@@ -34,7 +36,7 @@ app.post('/api/posts',(req, res) => {
    message: 'Post added successfully!'
   });
 });
-
+// get
 app.get('/api/posts',(req,res, next) => {
   Post.find()
   .then( documents =>{
